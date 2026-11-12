@@ -1,0 +1,29 @@
+:root {
+  --fundo: #f5f6f8; --painel: #ffffff; --texto: #1d2330; --suave: #5f6b7a;
+  --borda: #e1e5ea; --destaque: #1f6feb; --menu: #16202e; --menu-texto: #c9d3df;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto); background: var(--fundo);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); }
+.layout { display: flex; min-height: 100vh; }
+.menu { width: 240px; background: var(--menu); color: var(--menu-texto); padding: 20px 12px; flex-shrink: 0; }
+.marca { font-weight: 700; font-size: 18px; color: #fff; padding: 0 12px 20px; }
+.menu nav { display: flex; flex-direction: column; gap: 4px; }
+.menu a { color: var(--menu-texto); text-decoration: none; padding: 10px 12px; border-radius: 8px; font-size: 14px; }
+.menu a:hover { background: rgba(255,255,255,.06); }
+.menu a.active { background: var(--destaque); color: #fff; }
+.conteudo { flex: 1; padding: 28px 32px; min-width: 0; }
+h1 { font-size: 22px; margin: 0 0 20px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.card { background: var(--painel); border: 1px solid var(--borda); border-radius: 10px; padding: 18px; }
+.numero { font-size: 30px; font-weight: 700; }
+.rotulo { color: var(--suave); font-size: 13px; margin-top: 4px; }
+.aviso { background: #fff4e5; border: 1px solid #f0c27b; padding: 10px 14px; border-radius: 8px; }
+.vazio { color: var(--suave); }
+@media (max-width: 720px) {
+  .layout { flex-direction: column; }
+  .menu { width: 100%; }
+  .menu nav { flex-direction: row; flex-wrap: wrap; }
+  .conteudo { padding: 20px 16px; }
+}

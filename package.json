@@ -1,0 +1,16 @@
+{
+  "name": "worklist-alto",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Automação de lançamento de pedidos no Cerbero CCA",
+  "workspaces": ["server", "web"],
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
+    "test": "npm run test -w server"
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
+}
